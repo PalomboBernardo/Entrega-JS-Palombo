@@ -4,11 +4,11 @@ const MAXIMO = 4;
 let opciones;
 
 do {
-  opciones = parseInt(prompt("Reservas - 1. Sacar Reserva - 2. Reservas Dadas - 3. Buscar Reserva - 4. Salir"));
+  opciones = parseInt(prompt("Reservas \n1.Sacar Reserva \n2.Reservas Dadas \n3.Buscar Reserva \n4. Salir"));
 
   switch (opciones) {
     case 1:
-      let nombre1 = prompt("¿a nombre de quien desea hacer la reserva?:");
+      let nombre1 = prompt("¿A nombre de quien desea hacer la reserva?:");
       SacarReserva(nombre1, reservas);
       break;
 
@@ -25,32 +25,16 @@ do {
       break;
 
     default:
-      alert("No quiero hacer reserva.");
-      console.log("No quiero hacer reserva. " + opciones);
+      alert("Esa opcion no exite.");
+      console.log("Esa opcion no exite. " + opciones);
   }
 } while (opciones !== 4);
 
 console.log("Se terminaron las Reservas.");
 alert("Se terminaron las reservas.");
   
-// función para mostrar turnos
-function ReservasDadas(listaReservas) {
-  if (listaReservas.length === 0) {
-    console.log("No hay turnos.");
-  } else {
-      let i = 0;
-      let lista = "";
-    while (i < listaReservas.length) {
-      lista += (i + 1) + ". " + listaReservas[i] + "";
-      i++;
-    }
-    console.log("Personas que reservaron:" + lista);
-    alert("Personas que hicieron reserva:" + lista);
-    
-  }
-}
 
-// función para agregar un turno
+// funcion para sacar las reservas
 function SacarReserva(nombre, listaReservas) {
   if (listaReservas.length < MAXIMO) {
     listaReservas.push(nombre);
@@ -62,6 +46,24 @@ function SacarReserva(nombre, listaReservas) {
   }
 }
 
+// funcion para lista de reservas
+function ReservasDadas(listaReservas) {
+  if (listaReservas.length === 0) {
+    console.log("No hay reservas.");
+  } else {
+      let i = 0;
+      let lista = "";
+    while (i < listaReservas.length) {
+      lista = lista + (i + 1) + ". " + listaReservas[i] + "\n";
+      i++;
+    }
+    console.log("Personas que reservaron:" + lista);
+    alert("Personas que hicieron reserva:" + lista);
+    
+  }
+}
+
+// funcion para buscar las reservas
 function buscarReserva(nombre, listaReservas) {
   let encontrado = false;
 
@@ -77,6 +79,6 @@ function buscarReserva(nombre, listaReservas) {
     
   } else {
     console.log("no hay reserva de: " + nombre);
-    alert("No existe Reserva a para " + nombre);
+    alert("No existe Reserva para " + nombre);
   }
 }
