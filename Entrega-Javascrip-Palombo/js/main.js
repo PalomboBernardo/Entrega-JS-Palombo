@@ -65,7 +65,7 @@ function ReservasDadas(listaReservas) {
 
 // funcion para buscar las reservas
 function buscarReserva(nombre, listaReservas) {
-  let encontrado = false;
+  let encontrada = false;
 
   for (let i = 0; i < listaReservas.length; i++) {
     if (listaReservas[i] === nombre) {
@@ -73,7 +73,7 @@ function buscarReserva(nombre, listaReservas) {
     }
   }
   
-  if (encontrado) {
+  if (encontrada) {
     console.log("Reserva encontrada: " + nombre);
     alert("La reserva de " + nombre + " está registrada.");
     
