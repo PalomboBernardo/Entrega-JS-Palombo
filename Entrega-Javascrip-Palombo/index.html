@@ -1,13 +1,49 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- JS -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Reservas de Departamentos</title>
+  <link rel="stylesheet" href="./css/style.css" />
   <script defer src="./js/main.js"></script>
-  <title>Pre-Entrega 1</title>
 </head>
+
 <body>
-  <h1> Entrega 1</h1>
+  <main class="box">
+    <h1>Reservas de Departamentos</h1>
+
+    <form id="form">
+      <input type="hidden" id="id" />
+
+      <div class="fila">
+        <div class="grupo">
+          <label for="nombre">Nombre del huesped</label>
+          <input id="nombre" placeholder="Ej: Ana Perez" required />
+        </div>
+
+        <div class="grupo grupo-depto">
+          <label for="departamento">Departamento</label>
+          <select id="departamento" required>
+            <option value="" selected disabled>Elegi un departamento</option>
+          </select>
+        </div>
+      </div>
+
+      <label for="fechaInicio">Fecha de inicio:</label>
+      <input id="fechaInicio" type="date" required />
+
+      <label for="fechaFin">Fecha de fin:</label>
+      <input id="fechaFin" type="date" required />
+
+      <div id="total" class="total">Total: —</div>
+
+      <button>Guardar</button>
+      <button type="button" id="cancelar" hidden>Cancelar</button>
+    </form>
+    <ul id="lista"></ul>
+    <div id="estado" aria-live="polite"></div>
+  </main>
 </body>
+
 </html>
