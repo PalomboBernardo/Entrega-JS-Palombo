@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Resumen de reserva</title>
+    <!-- Estilos-->
+    <link rel="stylesheet" href="./css/style.css" />
+    <!-- JS -->
+    <script defer src="./js/resumen.js"></script>
+    <!-- Toastify CSS -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+</head>
+
+<body>
+    <main class="box box-resumen">
+        <h1>Resumen de la Ultima reserva</h1>
+
+        <section id="resumen" class="panel panel-resumen"></section>
+
+        <div class="fila botones-resumen">
+            <a id="btn-email" class="btn-accion" target="_blank">Enviar por Email</a>
+            <a id="btn-whatsapp" class="btn-accion btn-wa" target="_blank">Enviar por WhatsApp</a>
+            <a href="./index.html" class="btn-accion btn-secundario">Volver</a>
+        </div>
+    </main>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

@@ -5,45 +5,99 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Reservas de Departamentos</title>
+  <!-- Estilos-->
   <link rel="stylesheet" href="./css/style.css" />
+  <!-- JS -->
   <script defer src="./js/main.js"></script>
+  <!-- Toastify CSS -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 
 <body>
   <main class="box">
     <h1>Reservas de Departamentos</h1>
+    <div class="layout">
+      <!-- PANEL IZQUIERDO -->
+      <section class="panel">
+        <h2>Nueva reserva</h2>
+        <form id="form">
+          <input type="hidden" id="id" />
+          <div class="fila">
+            <div class="grupo">
+              <label for="nombre">Nombre y apellido del titular</label>
+              <input id="nombre" placeholder="Ej: Ana Perez" required />
+            </div>
+            <div class="grupo grupo-depto">
+              <label for="departamento">Departamento</label>
+              <select id="departamento" required>
+                <option value="" selected disabled>Elegi un departamento</option>
+              </select>
+            </div>
+          </div>
 
-    <form id="form">
-      <input type="hidden" id="id" />
+          <div class="fila">
+            <div class="grupo">
+              <label for="dni">DNI del titular</label>
+              <input id="dni" placeholder="Ej: 30123456" required />
+            </div>
+            <div class="grupo">
+              <label for="telefono">Teléfono de contacto</label>
+              <input id="telefono" placeholder="Ej: 351-1234567" required />
+            </div>
+          </div>
 
-      <div class="fila">
-        <div class="grupo">
-          <label for="nombre">Nombre del huesped</label>
-          <input id="nombre" placeholder="Ej: Ana Perez" required />
-        </div>
+          <div class="fila">
+            <div class="grupo">
+              <label for="email">Email</label>
+              <input id="email" type="email" placeholder="Ej: ana@mail.com" required />
+            </div>
+            <div class="grupo">
+              <label for="adultos">Cantidad de adultos</label>
+              <input id="adultos" type="number" min="1" value="1" required />
+            </div>
+            <div class="grupo">
+              <label for="menores">Cantidad de menores</label>
+              <input id="menores" type="number" min="0" value="0" required />
+            </div>
+          </div>
 
-        <div class="grupo grupo-depto">
-          <label for="departamento">Departamento</label>
-          <select id="departamento" required>
-            <option value="" selected disabled>Elegi un departamento</option>
-          </select>
-        </div>
-      </div>
+          <div class="fila">
+            <div class="grupo">
+              <label for="fechaInicio">Fecha de inicio</label>
+              <input id="fechaInicio" type="date" required />
+            </div>
+            <div class="grupo">
+              <label for="fechaFin">Fecha de fin</label>
+              <input id="fechaFin" type="date" required />
+            </div>
+          </div>
 
-      <label for="fechaInicio">Fecha de inicio:</label>
-      <input id="fechaInicio" type="date" required />
+          <div id="total" class="total">Total: —</div>
 
-      <label for="fechaFin">Fecha de fin:</label>
-      <input id="fechaFin" type="date" required />
+          <div class="fila">
+            <button>Reservar</button>
+            <button type="button" id="cancelar" hidden>Cancelar</button>
+          </div>
+        </form>
+      </section>
 
-      <div id="total" class="total">Total: —</div>
+      <!-- PANEL DE LA DERECHA DE LAS RESERVAS ACTIVAS -->
+      <section class="panel panel-reservas">
+        <h2>Reservas activas</h2>
+        <ul id="lista"></ul>
+      </section>
+    </div>
 
-      <button>Guardar</button>
-      <button type="button" id="cancelar" hidden>Cancelar</button>
-    </form>
-    <ul id="lista"></ul>
     <div id="estado" aria-live="polite"></div>
+
+    <div class="acciones-finales">
+      <a href="./resumen.html" class="link-resumen">Ver último resumen de reserva</a>
+    </div>
   </main>
+
+  <!-- TOASTIFY Y SWEETALERT -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

@@ -1,0 +1,53 @@
+{
+    "departamentos": [
+        {
+            "numero": 1,
+            "tipo": "Básico",
+            "precio": 35000
+        },
+        {
+            "numero": 2,
+            "tipo": "Básico",
+            "precio": 35000
+        },
+        {
+            "numero": 3,
+            "tipo": "Básico",
+            "precio": 35000
+        },
+        {
+            "numero": 4,
+            "tipo": "Suite",
+            "precio": 55000
+        },
+        {
+            "numero": 5,
+            "tipo": "Suite",
+            "precio": 55000
+        },
+        {
+            "numero": 6,
+            "tipo": "Suite Presidencial",
+            "precio": 85000
+        }
+    ],
+    
+    "metodosDePago": [
+        {
+            "id": "efectivo",
+            "label": "Efectivo"
+        },
+        {
+            "id": "tarjeta",
+            "label": "Tarjeta de crédito"
+        },
+        {
+            "id": "debito",
+            "label": "Tarjeta de débito"
+        },
+        {
+            "id": "transferencia",
+            "label": "Transferencia bancaria"
+        }
+    ]
+}
