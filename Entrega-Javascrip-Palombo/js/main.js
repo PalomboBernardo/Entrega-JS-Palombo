@@ -271,7 +271,7 @@ async function cargarDatosIniciales() {
 
     cargarOpcionesDepartamento();
     renderReservas();
-    
+
     mostrarMensaje("Datos cargados correctamente.", "ok");
   } catch (err) {
     mostrarMensaje("No se pudieron cargar los datos iniciales.", "error");
@@ -333,6 +333,18 @@ formulario.addEventListener("submit", evento => {
     return;
   }
 
+  if (isNaN(reservaNueva.dni)) {
+    mostrarMensaje("El DNI debe contener solo números.", "error");
+    toast("DNI inválido.", "error");
+    return;
+  }
+
+  if (isNaN(reservaNueva.telefono) || reservaNueva.telefono.length < 8) {
+    mostrarMensaje("El teléfono debe tener solo números y al menos 8 dígitos.", "error");
+    toast("Teléfono inválido.", "error");
+    return;
+  }
+
   if (
     !desdeHoyEnAdelante(reservaNueva.inicio) ||
     !desdeHoyEnAdelante(reservaNueva.fin)
@@ -384,7 +396,6 @@ formulario.addEventListener("submit", evento => {
   iniciarCircuitoReserva(reservaNueva, esEdicion);
 });
 
-// Cancelar edición
 const botonCancelar = document.getElementById("cancelar");
 botonCancelar.addEventListener("click", () => {
   formulario.reset();
